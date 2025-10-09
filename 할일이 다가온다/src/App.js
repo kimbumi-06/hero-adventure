@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//라우터 데려오기
+
+
+import StartPage from './components/pages/start/start-page.js'; //페이지 컴포넌트 가져오기
+import TodoEnter from './components/pages/start/todo-enter-page.js';
+import Starting from './components/pages/start/start-page.js';
+import Selecting from './components/pages/start/selecting-page.js';
+import Naming from './components/pages/start/naming-page.js';
 
 
 
-function App() {    //컴포넌트 정의
+function App() {
+  //컴포넌트 정의
+
   return (
-    //JSX 반환 받기 -> 렌더링
-    //여기까지는 주석이 이렇게 생김
-    <div className="App"> {/*여기부터 이런 형식*/}
-      {" "}
-      {/*JSX는 JS 기반이라 class 써버리면 안됨*/}
-      <div className="black_bg"> {/*부모 컴포넌트가 감싸줘야 오류X + 검은배경 가져옴*/}
-        <h2>할 일이 다가온다...
-        </h2>
-          <button className="start-btn">시작하기</button>
-      </div>
-      
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Starting />} />
+      </Routes>
+    </Router>
   );
 }
+
+
 
 export default App;
