@@ -1,11 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./MyButton.css"; // 버튼의 스타일을 담을 CSS 파일
 
-export function StartButton({ children}) {
-
+export function StartButton({ children }) {
+    const navigate = useNavigate();
   const handleStart = () => {
-    
-    alert("다음 화면!");
+    alert("이름 입력 화면으로!");
+    navigate('/name');
   };
 
   return (
@@ -15,3 +17,16 @@ export function StartButton({ children}) {
   );
 }
 
+export function NextButton({ children }) {
+  const navigate = useNavigate();
+  const handleStart = () => {
+    alert("투두 입력 화면으로!");
+    navigate("/todo");
+  };
+
+  return (
+    <button className="next-btn" onClick={handleStart}>
+      {children} {/*이름 그때그때 짓기*/}
+    </button>
+  );
+}

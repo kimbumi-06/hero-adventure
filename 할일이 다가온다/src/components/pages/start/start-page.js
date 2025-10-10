@@ -1,5 +1,6 @@
 import React from "react";
-import "../../../App.css";
+
+import "../../../styles/BackGround.css";
 import {StartButton}  from "../../MyButton/MyButton.js"; 
 
 

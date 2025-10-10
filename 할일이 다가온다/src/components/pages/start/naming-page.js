@@ -1,15 +1,15 @@
 import React from "react";
-
-const naming: React.FC = () => {
-  
-}
+import {NextButton} from "../../MyButton/MyButton.js"
 
 function Naming() {
+
   return (
     <div>
       <h2>Naming</h2>
-      Naming...
+      Naming... 
+      <NextButton>시작하기</NextButton>
     </div>
+   
   );
 }
 
