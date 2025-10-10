@@ -4,12 +4,13 @@ import {NextButton} from "../../MyButton/MyButton.js"
 function Naming() {
 
   return (
-    <div>
-      <h2>Naming</h2>
-      Naming... 
-      <NextButton>시작하기</NextButton>
+    <div className="App">
+      <div className="black_bg">
+        <h2>Naming</h2>
+        Naming...
+        <NextButton to="/todo">다음으로</NextButton>
+      </div>
     </div>
-   
   );
 }
 

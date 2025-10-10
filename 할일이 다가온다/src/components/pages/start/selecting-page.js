@@ -1,11 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NextButton } from "../../MyButton/MyButton";
 
 function Selecting() {
   return (
-    <div>
-      <h2>Selecting</h2>
-      Selecting...
+    <div className="App">
+      <div className="black_bg">
+        <h2>Select...</h2>
+        what?
+        <NextButton to="/">다음으로</NextButton>
+      </div>
     </div>
   );
 }
