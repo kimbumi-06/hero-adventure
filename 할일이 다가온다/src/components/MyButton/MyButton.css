@@ -12,16 +12,24 @@
     /*border-radius: 12px; /*모서리 둥글게*/
 }
 
+
 .next-btn {
     background-color: #000000;
     border: none;
-    color: rgb(147, 0, 0);
-    padding: 15px 32px;
+    color: rgb(161, 1, 1);
+    padding: 11px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+
+    display: inline-block; /*인라인 블록으로 설정*/
     font-size: 20px;
-    margin: 4px 2px;
+    margin: 6px 2px;
     cursor: pointer;
-    /*border-radius: 12px; /*모서리 둥글게*/
+    border-radius: 12px; /*모서리 둥글게*/
+
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
 }
+

@@ -16,7 +16,7 @@ export function StartButton({ children }) {
   );
 }
 
-export function NextButton({ children,  to }) {
+export function NextButton({children,  to}) {
     const navigate = useNavigate();
     const handleNavigation = (event) => {
 
