@@ -1,6 +1,6 @@
 import React from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
-import {AddInput} from "../../Input/Input.js"
+import {AddInput} from "../../Add/Add.js"
 
 function Targeting() {
   return (
