@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import TodoEnter from './components/pages/start/todo-enter-page.js';
 import Starting from './components/pages/start/start-page.js';
-import Targeting from './components/pages/start/selecting-target-page.js';
+import Targeting from "./components/pages/start/selecting-target-page.js";
 import Select_reward from './components/pages/start/selecting-reward-page.js';
 import Naming from './components/pages/start/naming-page.js';
 

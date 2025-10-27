@@ -1,13 +1,14 @@
 .start-btn {
     background-color: #000000;
     border: none;
-    color: rgb(147, 0, 0);
-    padding: 15px 32px;
+    color: rgb(203, 203, 203);
+    padding: 7px 32px;
     text-align: center;
     text-decoration: none;
+
     display: inline-block;
     font-size: 20px;
-    margin: 4px 2px;
+    margin: 1px 2px;
     cursor: pointer;
     /*border-radius: 12px; /*모서리 둥글게*/
 }
@@ -16,7 +17,7 @@
 .next-btn {
     background-color: #000000;
     border: none;
-    color: rgb(161, 1, 1);
+    color: rgb(203, 203, 203);
     padding: 11px 32px;
     text-align: center;
     text-decoration: none;
@@ -27,9 +28,27 @@
     cursor: pointer;
     border-radius: 12px; /*모서리 둥글게*/
 
-    position: absolute;
+    position: absolute; /*부모 요소 기준 절대 위치 지정*/
     right: 20px;
     bottom: 20px;
+}
 
+.before-btn {
+    background-color: #000000;
+    border: none;
+    color: rgb(203, 203, 203);
+    padding: 11px 32px;
+    text-align: center;
+    text-decoration: none;
+
+    display: inline-block;
+    font-size: 20px;
+    margin: 6px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
 }
 

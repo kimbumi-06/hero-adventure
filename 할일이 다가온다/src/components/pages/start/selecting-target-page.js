@@ -1,15 +1,16 @@
 import React from "react";
-import { NextButton } from "../../MyButton/MyButton";
+import { NextButton, BeforeButton } from "../../MyButton/MyButton";
+import {AddInput} from "../../Input/Input.js"
 
 function Targeting() {
   return (
-
-      <div className="black_bg">
-        <h2>목표를 설정하시오...</h2>
-        what?
-        <NextButton to="/select_reward">다음으로</NextButton>
-      </div>
-
+    <div className="black_bg">
+      <h2>목표를 설정하시오...</h2>
+      {/*<p className="text">what?</p>*/}
+      <AddInput to="/select_reward"/>
+      <BeforeButton to="/name">이전</BeforeButton>
+      <NextButton to="/select_reward">다음</NextButton>
+    </div>
   );
 }
 

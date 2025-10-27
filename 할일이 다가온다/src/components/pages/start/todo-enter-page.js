@@ -1,14 +1,13 @@
 import React from "react";
-import { NextButton } from "../../MyButton/MyButton";
+import { NextButton, BeforeButton } from "../../MyButton/MyButton";
 
 function TodoEnter() {
   return (
-    <div className="App">
-      <div className="black_bg">
-        <h2>입력된 목표</h2>
-        이것저것
-        <NextButton to="/">다음으로</NextButton>
-      </div>
+    <div className="black_bg">
+      <h2>입력된 목표</h2>
+      <p className="text">이것저것</p>
+      <BeforeButton to="/select_reward">이전</BeforeButton>
+      <NextButton to="/">다음</NextButton>
     </div>
   );
 }

@@ -16,10 +16,9 @@ export function StartButton({ children }) {
   );
 }
 
-export function NextButton({children,  to}) {
-    const navigate = useNavigate();
-    const handleNavigation = (event) => {
-
+export function NextButton({ children, to }) {
+  const navigate = useNavigate();
+  const handleNavigation = (event) => {
     if (to) {
       navigate(to);
     }
@@ -27,6 +26,21 @@ export function NextButton({children,  to}) {
 
   return (
     <button className="next-btn" onClick={handleNavigation}>
+      {children} {/*이름 그때그때 짓기*/}
+    </button>
+  );
+}
+
+export function BeforeButton({ children, to }) {
+  const navigate = useNavigate();
+  const handleNavigation = (event) => {
+    if (to) {
+      navigate(to);
+    }
+  };
+
+  return (
+    <button className="before-btn" onClick={handleNavigation}>
       {children} {/*이름 그때그때 짓기*/}
     </button>
   );
