@@ -4,24 +4,26 @@ import "./Add.css";
 
 
 
-export function AddInput({ value, onChange, to }) {
+export function AddInput({ value, onChange, onAddItem }) {
   
     const handleKeyDown = (event) => {
     //엔터키 감지 -> 페이지 넘기는거
     
         if (event.key === "Enter") {
         event.preventDefault(); // 기본 동작 방지 사실 뭔지 모름
-        onchange(value);
+        onAddItem();
         }
     };
 
   const handleAddclick = () => {
-    onchange(value);
+    onAddItem();
   };
 
   return (
     <div>
-      <input type="text" className="add-input" onKeyDown={handleKeyDown} />
+      <input type="text" className="add-input" 
+      value = {value}    onChange={onChange}
+      onKeyDown={handleKeyDown} />
 
       <button className="add-btn" onClick={handleAddclick}>
         +
@@ -30,3 +32,5 @@ export function AddInput({ value, onChange, to }) {
     </div>
   );
 }
+
+
