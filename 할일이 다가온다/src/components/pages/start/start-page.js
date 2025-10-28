@@ -13,7 +13,7 @@ function Starting() {
           {" "}
           {/*부모 컴포넌트가 감싸줘야 오류X + 검은배경 가져옴*/}
           <h2>할 일이 다가온다...</h2>
-          <StartButton>시작하기</StartButton>
+          <StartButton to="/name">시작하기</StartButton>
         </div>
       
     );

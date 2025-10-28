@@ -8,9 +8,16 @@ function Select_reward() {
       <h2>달성 보상을 설정하시오...</h2>
       {/*<p className="text">what?</p>*/}
 
-      <NextInput to="/todo"/>
-      <BeforeButton to="/target">이전</BeforeButton>
-      <NextButton to="/todo">다음</NextButton>
+      <NextInput to="/todo" />
+      
+      <div>
+        {/*둘 중 하나 고르는 창*/}
+      </div>
+
+      <div>
+        <BeforeButton to="/target">이전</BeforeButton>
+        <NextButton to="/todo">다음</NextButton>
+      </div>
     </div>
   );
 }

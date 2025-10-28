@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import "./MyButton.css"; // 버튼의 스타일을 담을 CSS 파일
 
-export function StartButton({ children }) {
+export function StartButton({ children, to }) {
     const navigate = useNavigate();
   const handleStart = () => {
-    navigate('/name');
+    navigate(to);
   };
 
   return (

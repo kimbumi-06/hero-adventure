@@ -47,7 +47,7 @@ function Targeting() {
       </div>
 
       <div>
-        <BeforeButton to="/name">이전</BeforeButton>
+        <BeforeButton to="/select_adventure">이전</BeforeButton>
         <NextButton to="/select_reward">다음</NextButton>
       </div>
     </div>
