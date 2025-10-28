@@ -32,25 +32,24 @@ function Targeting() {
       <h2>목표를 설정하시오...</h2>
       {/*<p className="text">what?</p>*/}
 
-      <div>
-        <AddInput
-          value={inputValue}
-          onChange={handleInputChange}
-          onAddItem={handleAddItem}
-        />
+      <AddInput
+        value={inputValue}
+        onChange={handleInputChange}
+        onAddItem={handleAddItem}
+      />
 
+      <div className="scrollable-list">
         <ul className="todo-list">
           {item.map((todo) => (
-            <AddList 
-            key={todo.id} 
-            item={todo} />
+            <AddList key={todo.id} item={todo} />
           ))}
         </ul>
-
       </div>
 
-      <BeforeButton to="/name">이전</BeforeButton>
-      <NextButton to="/select_reward">다음</NextButton>
+      <div>
+        <BeforeButton to="/name">이전</BeforeButton>
+        <NextButton to="/select_reward">다음</NextButton>
+      </div>
     </div>
   );
 }
