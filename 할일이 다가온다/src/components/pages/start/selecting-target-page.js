@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
-import {AddInput} from "../../Add/Add.js"
+import {AddInput, AddList} from "../../Add/Add.js"
+
+import "../../../styles/list.css";
 
 function Targeting() {
   // 추가할 장소 만들어두는 중
@@ -13,7 +15,7 @@ function Targeting() {
   }; //입력창 바뀌면 계속 불려오는 애
 
   const handleAddItem = () => {
-    if (inputValue.trim() !== "") return; //빈칸이면 실행안함
+    if (inputValue.trim() === "") return; //빈칸이면 실행안함
 
     const newItem = {
       id: Date.now(),
@@ -30,11 +32,22 @@ function Targeting() {
       <h2>목표를 설정하시오...</h2>
       {/*<p className="text">what?</p>*/}
 
-      <AddInput 
-        value={inputValue}
-        onChange={handleInputChange}
-        onAddItem={handleAddItem}
-       />
+      <div>
+        <AddInput
+          value={inputValue}
+          onChange={handleInputChange}
+          onAddItem={handleAddItem}
+        />
+
+        <ul className="todo-list">
+          {item.map((todo) => (
+            <AddList 
+            key={todo.id} 
+            item={todo} />
+          ))}
+        </ul>
+
+      </div>
 
       <BeforeButton to="/name">이전</BeforeButton>
       <NextButton to="/select_reward">다음</NextButton>

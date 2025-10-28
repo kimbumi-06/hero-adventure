@@ -31,3 +31,21 @@
     cursor: pointer;
     border-radius: 4px;
 }
+
+.add-list {
+    width: 210px;
+    padding: 8px 10px;
+    font-size: 16px;
+    color: #eeeeee;
+    background-color: #141414;
+    border: 2px solid rgb(203, 203, 203);
+
+    border-radius: 4px;
+    text-align: center;
+
+    outline: none;
+    transition: border-color 0.3s;
+
+    margin-top: 15px;
+
+}

@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
+
 import "./Add.css";
 
-
-
-
+//할일 입력창
 export function AddInput({ value, onChange, onAddItem }) {
   
     const handleKeyDown = (event) => {
@@ -20,17 +18,30 @@ export function AddInput({ value, onChange, onAddItem }) {
   };
 
   return (
-    <div>
-      <input type="text" className="add-input" 
-      value = {value}    onChange={onChange}
-      onKeyDown={handleKeyDown} />
+      <div>
+        <input
+          type="text"
+          className="add-input"
+          value={value}
+          onChange={onChange}
+          onKeyDown={handleKeyDown}
+        />
 
-      <button className="add-btn" onClick={handleAddclick}>
-        +
-      </button>
-
-    </div>
+        <button className="add-btn" onClick={handleAddclick}>
+          +
+        </button>
+      </div>
   );
 }
 
+//할일 추가 리스트
+export function AddList({ item }) {
 
+  return (
+    <li key={item.id} className="add-list">
+      <span>{item.text}</span>
+    
+    </li>
+
+  );
+}
