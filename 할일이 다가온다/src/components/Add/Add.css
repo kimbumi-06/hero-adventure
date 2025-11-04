@@ -14,6 +14,7 @@
     transition: border-color 0.3s;
 }
 
+/*
 .add-btn {
     background-color: #000000;
     border: 2px solid rgb(203, 203, 203);
@@ -31,6 +32,7 @@
     cursor: pointer;
     border-radius: 4px;
 }
+*/
 
 .add-list {
     width: 210px;

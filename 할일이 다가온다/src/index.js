@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'; //렌더링 담당
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "react-router-dom";
 //router 만듦 -> npm install react-router-dom -> 페이지 구현 가능
 
 
