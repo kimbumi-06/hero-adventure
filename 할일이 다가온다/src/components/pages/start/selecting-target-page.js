@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
 import {AddInput, AddList} from "../../Add/Add.js"
+import { useTarget } from "../../../hooks/useUser.js";
 
 import "../../../styles/list.css";
 
 function Targeting() {
   // 추가할 장소 만들어두는 중
 
-  const [item, setItem] = useState([]); //추가된 항목들 저장하는 리스트
+  const {targets, setTargets} = useTarget([]); //추가된 항목들 저장하는 리스트
   const [inputValue, setInputValue] = useState(""); //지금 입력창 값
 
   const handleInputChange = (event) => {
@@ -17,12 +18,12 @@ function Targeting() {
   const handleAddItem = () => {
     if (inputValue.trim() === "") return; //빈칸이면 실행안함
 
-    const newItem = {
+    const newTarget = {
       id: Date.now(),
       text: inputValue
     };
 
-    setItem((items) => [...items, newItem]);
+    setTargets((targets) => [...targets, newTarget]);
 
     setInputValue(""); //입력창 초기화
   };
@@ -40,7 +41,7 @@ function Targeting() {
 
       <div className="scrollable-list">
         <ul className="todo-list">
-          {item.map((todo) => (
+          {targets.map((todo) => (
             <AddList key={todo.id} item={todo} />
           ))}
         </ul>
