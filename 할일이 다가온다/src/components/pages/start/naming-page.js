@@ -2,7 +2,7 @@ import React from "react";
 import {NextButton} from "../../MyButton/MyButton.js"
 //import {BeforeButton} from "../../MyButton/MyButton.js"
 import {NextInput} from "../../Input/Input.js"
-import {useName} from "../../../hooks/useName.js"
+import {useName} from "../../../hooks/useUser.js"
 
 
 function Naming() {
