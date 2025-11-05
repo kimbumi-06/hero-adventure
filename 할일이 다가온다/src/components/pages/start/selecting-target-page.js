@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
 import {AddInput, AddList} from "../../Add/Add.js"
 import { useTarget } from "../../../hooks/useUser.js";
+import { useAdventure } from "../../../hooks/useUser.js";
 
+import "../../../styles/font.css"
 import "../../../styles/list.css";
 
 function Targeting() {
@@ -10,6 +12,8 @@ function Targeting() {
 
   const {targets, setTargets} = useTarget([]); //추가된 항목들 저장하는 리스트
   const [inputValue, setInputValue] = useState(""); //지금 입력창 값
+
+  const {adventure} =useAdventure();
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -30,8 +34,10 @@ function Targeting() {
 
   return (
     <div className="black_bg">
-      <h2>목표를 설정하시오...</h2>
-      {/*<p className="text">what?</p>*/}
+      <h2 style={{marginBottom: '5px'}}>목표를 설정하시오...</h2>
+      <p className="text">{adventure}</p>
+
+
 
       <AddInput
         value={inputValue}

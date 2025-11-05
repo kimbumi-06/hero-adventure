@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
 import "./Add.css";
+import "../../styles/font.css"
+
+import deleteBtn from "../../assets/삭제버튼.png"
 
 export function Input({ value, onChange }) {
   const handleKeyDown = (event) => {
@@ -58,10 +61,20 @@ export function AddInput({ value, onChange, onAddItem }) {
 }
 
 //할일 추가 리스트
-export function AddList({ item }) {
+export function AddList({ item, onDelete }) {
+
+    const handleDeleteClick = () => {
+      onDelete(item.id);
+    };
+
   return (
     <li key={item.id} className="add-list">
       <span>{item.text}</span>
+      <img 
+      alt=""
+      className="delete-btn"
+      src={deleteBtn} 
+      onClick={handleDeleteClick} />
     </li>
   );
 }

@@ -2,6 +2,7 @@ import {useContext} from 'react';
 import NameContext from '../contexts/nameContext.js';
 import AdventureContext from '../contexts/adventureContext.js';
 import TargetContext from '../contexts/targetContext.js'
+import RewardContext from '../contexts/rewardContext.js';
 
 
 export function useName() {
@@ -26,5 +27,13 @@ export function useTarget() {
     throw new Error("useTarget must be used within a TargetProvider");
   }
   return context;
-
 }
+
+export function useReward() {
+  const context = useContext(RewardContext);
+  if (!context) {
+    throw new Error("useReward must be used within a RewaradProvider");
+  }
+  return context;
+}
+

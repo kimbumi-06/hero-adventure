@@ -51,3 +51,15 @@
     margin-top: 15px;
 
 }
+
+.delete-btn {
+
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    opacity: 0.7;
+}

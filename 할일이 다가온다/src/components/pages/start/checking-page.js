@@ -1,6 +1,8 @@
 import React from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
 
+import "../../../styles/font.css"
+
 function TodoCheck() {
   return (
     <div className="black_bg">
