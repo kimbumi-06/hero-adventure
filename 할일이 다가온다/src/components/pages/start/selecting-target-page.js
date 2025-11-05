@@ -10,10 +10,10 @@ import "../../../styles/list.css";
 function Targeting() {
   // 추가할 장소 만들어두는 중
 
-  const {targets, setTargets} = useTarget([]); //추가된 항목들 저장하는 리스트
+  const {targets, setTargets, deleteTarget} = useTarget([]); //추가된 항목들 저장하는 리스트
   const [inputValue, setInputValue] = useState(""); //지금 입력창 값
 
-  const {adventure} =useAdventure();
+  const {adventure} = useAdventure();
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -27,7 +27,7 @@ function Targeting() {
       text: inputValue
     };
 
-    setTargets((targets) => [...targets, newTarget]);
+    setTargets((prevTargets) => [...prevTargets, newTarget]);
 
     setInputValue(""); //입력창 초기화
   };
@@ -48,7 +48,10 @@ function Targeting() {
       <div className="scrollable-list">
         <ul className="todo-list">
           {targets.map((todo) => (
-            <AddList key={todo.id} item={todo} />
+            <AddList 
+            key={todo.id} 
+            item={todo} 
+            onDelete={deleteTarget} />
           ))}
         </ul>
       </div>

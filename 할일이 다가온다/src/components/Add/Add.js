@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Add.css";
 import "../../styles/font.css"
 
-import deleteBtn from "../../assets/삭제버튼.png"
+import deleteBtn from "../../assets/deletebtn.png"
 
 export function Input({ value, onChange }) {
   const handleKeyDown = (event) => {
@@ -70,11 +70,13 @@ export function AddList({ item, onDelete }) {
   return (
     <li key={item.id} className="add-list">
       <span>{item.text}</span>
-      <img 
-      alt=""
-      className="delete-btn"
-      src={deleteBtn} 
-      onClick={handleDeleteClick} />
+      <img
+        alt=""
+        className="delete-btn"
+        src={deleteBtn}
+        style={{filter: 'invert(100%)'}}
+        onClick={handleDeleteClick}
+      />
     </li>
   );
 }
