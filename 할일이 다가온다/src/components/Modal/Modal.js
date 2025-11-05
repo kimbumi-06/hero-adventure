@@ -13,11 +13,11 @@ export function Modal({children, onClose}) {
 
 };
 
+
 export function ModalButton({children, onClick}) {
 
   return (
-    <button className="modal-btn" 
-    >
+    <button className="modal-btn" onClick={onClick}>
       {children}
     </button>
   );

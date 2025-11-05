@@ -15,11 +15,10 @@ export function NextInput({ value, onChange, to }) {
   const navigate = useNavigate();
   const handleKeyDown = (event) => { //엔터키 감지 -> 페이지 넘기는거
     if (event.key === 'Enter') {
-      event.preventDefault(); // 기본 동작 방지 사실 뭔지 모름
+      event.preventDefault();
       if (value.trim() === "") return;
       
       openModal();
-      //navigate(to);
     }
   };
 
@@ -41,7 +40,7 @@ export function NextInput({ value, onChange, to }) {
 
         {isModalOpen && (
           <Modal onClose={closeModal}> 저장되었습니다!
-            <ModalButton onlcick={handleCloseModal}>
+            <ModalButton onClick={handleCloseModal}>
               확인
             </ModalButton>
           

@@ -1,5 +1,7 @@
 .modal-content {
-    background: white;
+    display:grid;
+
+    background: rgb(222, 222, 222);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -9,7 +11,12 @@
     /* 최대 너비 설정 */
     z-index: 1001;
     /* 오버레이보다 더 높은 값 */
+
+    font-size: 16px;
     text-align:center;
+    justify-content: center;
+
+    color:rgba(161, 10, 1);
 }
 
 .modal-overlay {
@@ -20,24 +27,26 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     /* 반투명 검정 배경 */
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     z-index: 1000;
     /* 모달 콘텐츠보다 낮은 값 */
 }
 
 .modal-btn {
-    background-color: #d6d6d6;
+    background-color:rgb(222, 222, 222);
     border: none;
-    color: rgb(10, 10, 10);
+    color: rgb(0, 0, 0);
     padding: 8px 32px;
     text-align: center;
     text-decoration: none;
 
-    display: inline-block;
-    font-size: 18px;
-    margin: 6px 2px;
+    display: block;
+    font-size: 15px;
+    margin: 6px 1px;
     cursor: pointer;
     border-radius: 12px;
     /*모서리 둥글게*/
