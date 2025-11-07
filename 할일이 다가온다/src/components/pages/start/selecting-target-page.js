@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
-import {AddInput, AddList} from "../../Add/Add.js"
+import {AddInput} from "../../Add/Add.js"
+import { AddList } from "../../Add/AddList.js";
 import { useTarget } from "../../../hooks/useUser.js";
 import { useAdventure } from "../../../hooks/useUser.js";
 
@@ -10,7 +11,7 @@ import "../../../styles/list.css";
 function Targeting() {
   // 추가할 장소 만들어두는 중
 
-  const {targets, setTargets, deleteTarget} = useTarget([]); //추가된 항목들 저장하는 리스트
+  const {targets, setTargets, editTarget, deleteTarget} = useTarget([]); //추가된 항목들 저장하는 리스트
   const [inputValue, setInputValue] = useState(""); //지금 입력창 값
 
   const {adventure} = useAdventure();
@@ -51,7 +52,8 @@ function Targeting() {
             <AddList 
             key={todo.id} 
             item={todo} 
-            onDelete={deleteTarget} />
+            onDelete={deleteTarget}
+            onEdit={editTarget}/>
           ))}
         </ul>
       </div>

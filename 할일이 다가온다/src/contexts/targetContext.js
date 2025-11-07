@@ -20,7 +20,17 @@ export function TargetProvider({ children }) {
   };
 
 
-  const value = { targets, setTargets, deleteTarget };
+  const editTarget = (idToEdit, newText) => {
+    setTargets((prevTargets) =>
+      prevTargets.map((target) =>
+        target.id === idToEdit ? {...target, text: newText} : target //삼항연산자? 참이몀ㄴ 텍스트 덮어쓰기
+      //이러면 복사한 새 개체를 새로 반환(메모리주소 새로 사용) -> 변화 감지 가능!
+      )
+    );
+  }
+
+
+  const value = { targets, setTargets, editTarget, deleteTarget };
 
 
   return (

@@ -9,6 +9,9 @@
     /* 너비 설정 */
     max-width: 500px;
     /* 최대 너비 설정 */
+
+    height: 100px;
+
     z-index: 1001;
     /* 오버레이보다 더 높은 값 */
 
@@ -43,6 +46,9 @@
     padding: 8px 32px;
     text-align: center;
     text-decoration: none;
+
+    height: 15px;
+
 
     display: block;
     font-size: 15px;
