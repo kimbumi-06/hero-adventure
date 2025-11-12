@@ -11,10 +11,11 @@ import "../../../styles/list.css";
 function Targeting() {
   // 추가할 장소 만들어두는 중
 
-  const {targets, setTargets, editTarget, deleteTarget} = useTarget([]); //추가된 항목들 저장하는 리스트
+  const { targets, setTargets, editTarget, deleteTarget, updateTargetType } = useTarget([]); //추가된 항목들 저장하는 리스트
   const [inputValue, setInputValue] = useState(""); //지금 입력창 값
 
-  const [editingId, setEditingId] = useState(null);
+  const [editingId, setEditingId] = useState(null); //리스트 중에 현재 수정중인 항목의 id
+  const [selectingId, setSelectingId] = useState(null); //선택창이 눌린 상태인지
 
   const {adventure} = useAdventure();
 
@@ -56,6 +57,9 @@ function Targeting() {
               onEdit={editTarget}
               editingId={editingId}
               setEditingId={setEditingId}
+              selectingId={selectingId}
+              setSelectingId={setSelectingId}
+              updateTargetType={updateTargetType}
             />
           ))}
         </ul>

@@ -8,7 +8,21 @@ import { useState } from "react";
 import deleteBtn from "../../assets/deletebtn.png";
 import editBtn from "../../assets/editbtn.png"
 
-export function AddList({ item, onEdit, onDelete, editingId, setEditingId }) {
+import checklistImage from "../../assets/checklist-icon.png";
+import repeatImage from "../../assets/repeat-icon.png";
+import timerImage from "../../assets/timer-icon.png";
+
+
+export function AddList({ 
+  item, 
+  onEdit, 
+  onDelete, 
+  editingId, 
+  setEditingId,
+  selectingId,
+  setSelectingId,
+  updateTargetType
+}) {
   const handleDeleteClick = () => {
     onDelete(item.id);
   };
@@ -16,6 +30,18 @@ export function AddList({ item, onEdit, onDelete, editingId, setEditingId }) {
   //const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(item.text);
   const isEditing = item.id === editingId;
+  const isSelecting = item.id === selectingId;
+
+  const handleSelectClick = () => {
+    setSelectingId(isSelecting? null : item.id);
+    if (isEditing) setEditingId(null);
+
+  }
+
+  const handleOptionSelect = (selectedType) => {
+    updateTargetType(item.id, selectedType);
+    setSelectingId(null);
+  }
 
   const handleEditClick = () => {
     setEditingId(item.id);
@@ -50,6 +76,16 @@ export function AddList({ item, onEdit, onDelete, editingId, setEditingId }) {
           <span>{item.text}</span>
 
           <div className="btn-group">
+            {/*타입선택버튼*/}
+            <img
+              alt="Select"
+              className="select-btn"
+              src={checklistImage}
+              style={{ filter: "invert(100%)" }} // 아이콘 색상 반전 (필요시)
+              onClick={handleSelectClick}
+            />
+
+            {/*수정버튼*/}
             <img
               alt=""
               className="edit-btn"
@@ -58,6 +94,7 @@ export function AddList({ item, onEdit, onDelete, editingId, setEditingId }) {
               onClick={handleEditClick}
             />
 
+            {/*삭제버튼*/}
             <img
               alt=""
               className="delete-btn"
@@ -67,6 +104,31 @@ export function AddList({ item, onEdit, onDelete, editingId, setEditingId }) {
             />
           </div>
         </>
+      )}
+
+      {/* 선택모드일ㄹ때 창 표시 */}
+      {isSelecting && (
+        <div className="selection-options">
+          
+          <img
+            alt="c"
+            src={checklistImage}
+            className="option-image"
+            onClick={() => handleOptionSelect("checklist")}
+          />
+          <img
+            alt="r"
+            src={repeatImage}
+            className="option-image"
+            onClick={() => handleOptionSelect("repeat")}
+          />
+          <img
+            alt="t"
+            src={timerImage}
+            className="option-image"
+            onClick={() => handleOptionSelect("timer")}
+          />
+        </div>
       )}
     </li>
   );

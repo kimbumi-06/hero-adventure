@@ -29,8 +29,20 @@ export function TargetProvider({ children }) {
     );
   }
 
+  const updateTargetType = (idToUpdate, newType) => {
+    setTargets((prevTargets) =>
+      prevTargets.map((target) =>
+        target.id === idToUpdate ? { ...target, type: newType } : target
+      )
+    );
+  };
 
-  const value = { targets, setTargets, editTarget, deleteTarget };
+  const value = { 
+    targets, 
+    setTargets, 
+    editTarget, 
+    deleteTarget, 
+    updateTargetType };
 
 
   return (
