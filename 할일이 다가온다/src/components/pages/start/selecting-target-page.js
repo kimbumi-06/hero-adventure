@@ -14,6 +14,8 @@ function Targeting() {
   const {targets, setTargets, editTarget, deleteTarget} = useTarget([]); //추가된 항목들 저장하는 리스트
   const [inputValue, setInputValue] = useState(""); //지금 입력창 값
 
+  const [editingId, setEditingId] = useState(null);
+
   const {adventure} = useAdventure();
 
   const handleInputChange = (event) => {
@@ -35,10 +37,8 @@ function Targeting() {
 
   return (
     <div className="black_bg">
-      <h2 style={{marginBottom: '5px'}}>목표를 설정하시오...</h2>
+      <h2 style={{ marginBottom: "5px" }}>목표를 설정하시오...</h2>
       <p className="text">{adventure}</p>
-
-
 
       <AddInput
         value={inputValue}
@@ -49,11 +49,14 @@ function Targeting() {
       <div className="scrollable-list">
         <ul className="todo-list">
           {targets.map((todo) => (
-            <AddList 
-            key={todo.id} 
-            item={todo} 
-            onDelete={deleteTarget}
-            onEdit={editTarget}/>
+            <AddList
+              key={todo.id}
+              item={todo}
+              onDelete={deleteTarget}
+              onEdit={editTarget}
+              editingId={editingId}
+              setEditingId={setEditingId}
+            />
           ))}
         </ul>
       </div>
