@@ -1,0 +1,19 @@
+.display-list {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    color: #eeeeee;
+    background-color: #141414;
+    border: 2px solid rgb(203, 203, 203);
+
+    display: flex;
+    border-radius: 4px;
+    justify-content: space-between;
+    /*양쪽 정렬*/
+    align-items: center;
+
+    outline: none;
+    transition: border-color 0.3s;
+
+    margin-top: 15px;
+}

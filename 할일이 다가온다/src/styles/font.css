@@ -13,3 +13,16 @@
 .black_bg .text {
     color: rgb(203, 203, 203);
 }
+
+.big-modal-content .text {
+    text-align: center;
+    display: flex;
+
+    color: rgb(40, 40, 40);
+    font-size: 20px;
+
+    justify-content: center;
+    margin-top: 0px;
+
+    flex-direction: column;
+}

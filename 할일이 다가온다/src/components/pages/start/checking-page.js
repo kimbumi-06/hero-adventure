@@ -1,9 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
+
+import { useAdventure } from "../../../hooks/useUser";
+import { useTarget } from "../../../hooks/useUser";
+
 
 import "../../../styles/font.css"
 
 function TodoCheck() {
+
+  const {adventure} = useAdventure();
+  const {targets, updateTargetType} = useTarget([]);
+
+  const [isAdventureClicked, setIsAdventureClicked] = useState(false);
+
+  
+
   return (
     <div className="black_bg">
       <h2>입력된 목표</h2>

@@ -1,13 +1,24 @@
 import React, {useState} from "react";
+
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
 import {NextInput} from "../../Input/Input.js"
+
 import { useReward } from "../../../hooks/useUser.js";
 
 function SelectReward() {
 
   const {reward, setReward} = useReward(""); //지금 입력창 값
+  const [isValue, setIsValue] = useState(!!reward);
+
   const handleInputChange = (event) => {
-    setReward(event.target.value);
+    const inputValue = event.target.value;
+    setReward(inputValue);
+
+    if (inputValue.length > 0) {
+      setIsValue(true);
+    } else {
+      setIsValue(false);
+    }
   }
   
   return (
@@ -24,7 +35,7 @@ function SelectReward() {
 
       <div>
         <BeforeButton to="/target">이전</BeforeButton>
-        <NextButton to="/todo">다음</NextButton>
+        {isValue && <NextButton to="/todo">다음</NextButton>}
       </div>
     </div>
   );

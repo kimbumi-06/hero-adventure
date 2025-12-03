@@ -1,0 +1,41 @@
+
+.raid-dot {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(87, 241, 255);
+    z-index: 10;
+}
+
+.raid-dot-1 {
+    bottom: 20%;
+    right: 30%;
+    transform: translateX(-50%);
+}
+
+.raid-dot-2 {
+    bottom: 20%;
+    left: 35%;
+    transform: translateX(-50%);
+}
+
+.raid-dot-3 {
+    bottom: 50%;
+    right: 35%;
+    transform: translateX(-50%);
+}
+
+.raid-dot-4 {
+    bottom: 50%;
+    left: 40%;
+    transform: tanslateX(-50%);
+}
+
+.raid-dot-5 {
+    bottom: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

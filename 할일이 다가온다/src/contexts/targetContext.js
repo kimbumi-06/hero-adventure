@@ -2,6 +2,8 @@ import {createContext, useState, useEffect} from 'react';
 
 export const TargetContext = createContext();
 
+const MAX_TARGETS = 5;
+
 export function TargetProvider({ children }) {
   const [targets, setTargets] = useState(() => {
     const savedTargets = localStorage.getItem("targets");
@@ -11,6 +13,14 @@ export function TargetProvider({ children }) {
   useEffect(() => {
     localStorage.setItem("targets", JSON.stringify(targets));
   }, [targets]);
+
+  const addTarget = (newTarget) => {
+    if (targets.length >= MAX_TARGETS) {
+      return false; // 추가 실패
+    }
+    setTargets((prevTargets) => [...prevTargets, newTarget]);
+    return true; // 추가 성공
+  };
 
   const deleteTarget = (idToDelete) => { //변수를 받고
     setTargets((prevtargets) =>          //리스트를 새로 변수로 받고
@@ -39,7 +49,8 @@ export function TargetProvider({ children }) {
 
   const value = { 
     targets, 
-    setTargets, 
+    setTargets,
+    addTarget, 
     editTarget, 
     deleteTarget, 
     updateTargetType };

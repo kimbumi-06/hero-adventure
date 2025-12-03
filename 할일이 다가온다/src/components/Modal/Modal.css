@@ -22,6 +22,7 @@
     color:rgba(161, 10, 1);
 }
 
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -56,4 +57,28 @@
     cursor: pointer;
     border-radius: 12px;
     /*모서리 둥글게*/
+}
+
+.big-modal-content {
+    display: grid;
+
+    background: rgb(239, 239, 239);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 60%;
+    height: 50%;
+
+    max-width: 800px;
+
+    max-height: 400px;
+
+    z-index: 1001;
+    /* 오버레이보다 더 높은 값 */
+
+    font-size: 27px;
+    text-align: center;
+    justify-content: center;
+
+    color: rgba(161, 10, 1);
 }

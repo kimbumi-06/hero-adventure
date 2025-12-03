@@ -1,14 +1,24 @@
 import React, { useState } from "react";
+
 import { NextButton, BeforeButton } from "../../MyButton/MyButton";
 import {NextInput} from "../../Input/Input.js"
+
 import { useAdventure } from "../../../hooks/useUser.js";
 
 function SelectAdventure() {
 
   const {adventure, setAdventure} = useAdventure(""); //지금 입력창 값
+  const [isValue, setIsValue] = useState(!!adventure);
 
   const handleInputChange = (event) => {
-    setAdventure(event.target.value);
+    const inputValue = event.target.value;
+    setAdventure(inputValue);
+
+    if (inputValue.length > 0) {
+      setIsValue(true);
+    } else {
+      setIsValue(false);
+    }
   }; //입력창 바뀌면 계속 불려오는 애
 
   return (
@@ -24,7 +34,7 @@ function SelectAdventure() {
 
       <div>
         <BeforeButton to="/name">이전</BeforeButton>
-        <NextButton to="/target">다음</NextButton>
+        {isValue && <NextButton to="/target">다음</NextButton>}
       </div>
 
     </div>

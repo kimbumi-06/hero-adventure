@@ -8,7 +8,7 @@ function Loading() {
   return (
         <div className="black_bg">
           <h2>모험 준비 중...</h2>
-          <StartButton to="/">시작!</StartButton>
+          <StartButton to="/raid">시작!</StartButton>
         </div>
       
     );

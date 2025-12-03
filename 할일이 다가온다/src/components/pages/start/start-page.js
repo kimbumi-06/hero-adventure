@@ -1,8 +1,8 @@
 import React from "react";
 
-import "../../../styles/BackGround.css";
 import {StartButton}  from "../../MyButton/MyButton.js"; 
 
+import "../../../styles/BackGround.css";
 
 function Starting() {
   return (

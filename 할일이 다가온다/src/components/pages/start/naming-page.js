@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+
 import {NextButton} from "../../MyButton/MyButton.js"
 //import {BeforeButton} from "../../MyButton/MyButton.js"
 import {NextInput} from "../../Input/Input.js"
+
 import {useName} from "../../../hooks/useUser.js"
 
 
 function Naming() {
 
   const {name, setName} = useName();
+  const [isValue, setIsValue] = useState(!!name);
 
   //지금 입력창 값
   const handleInputChange = (event) => {
-    setName(event.target.value);
-  }
+    const inputValue = event.target.value;
 
+    setName(inputValue);
+    if (inputValue.length > 0) {
+      setIsValue(true);
+    } else {
+      setIsValue(false);
+    }
+  }
 
   return (
     <div className="black_bg">
@@ -24,7 +33,8 @@ function Naming() {
       onChange={handleInputChange} />
 
       {/*<BeforeButton to="/">이전</BeforeButton>*/}
-      <NextButton to="/select_adventure">다음</NextButton>
+      { isValue &&
+      <NextButton to="/select_adventure">다음</NextButton>}
     </div>
   );
 

@@ -17,21 +17,27 @@ import SelectAdventure from './components/pages/start/selecting-adventure.js';
 import Loading from './components/pages/start/loading.js';
 //페이지 파일
 
+import Raid from "./components/pages/ongoing/raid-page.js"
+import Success from "./components/pages/ongoing/success-page.js"
+
 function App() {
   //컴포넌트 정의
 
   return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Starting />} />
-          <Route path="/name" element={<Naming />} />
-          <Route path="/todo" element={<TodoCheck />} />
-          <Route path="/target" element={<Targeting />} />
-          <Route path="/select_reward" element={<SelectReward />} />
-          <Route path="/select_adventure" element={<SelectAdventure />} />
-          <Route path="/loading" element={<Loading />} />
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Starting />} />
+        <Route path="/name" element={<Naming />} />
+        <Route path="/todo" element={<TodoCheck />} />
+        <Route path="/target" element={<Targeting />} />
+        <Route path="/select_reward" element={<SelectReward />} />
+        <Route path="/select_adventure" element={<SelectAdventure />} />
+        <Route path="/loading" element={<Loading />} />
+
+        <Route path="/raid" element={<Raid />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
+    </Router>
   );
 }
 
