@@ -40,7 +40,7 @@ export function NextInput({ value, onChange, to }) {
 
         {isModalOpen && (
           <Modal onClose={closeModal}> 저장되었습니다!
-            <ModalButton onClick={handleCloseModal}>
+            <ModalButton onClose={handleCloseModal}>
               확인
             </ModalButton>
           

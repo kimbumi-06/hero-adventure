@@ -85,14 +85,13 @@ function Targeting() {
         <NextButton to="/select_reward">다음</NextButton>
       </div>
 
-        {isModalOpen && (
-          <Modal> 
-            목표는 최대 5개까지 설정할 수 있습니다.
-            <ModalButton onClose={handleCloseModal}> 확인 </ModalButton>
-            {/* enter 누르면 닫히는거 따로 함수 빼야할듯 */}
-          </Modal>
-        )}
-
+      {isModalOpen && (
+        <Modal onClose={handleCloseModal}>
+          목표는 최대 5개까지 설정할 수 있습니다.
+          <ModalButton onClose={handleCloseModal}> 확인 </ModalButton>
+          {/* enter 누르면 닫히는거 따로 함수 빼야할듯 */}
+        </Modal>
+      )}
     </div>
   );
 }

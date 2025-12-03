@@ -41,8 +41,22 @@ export function BeforeButton({ children, to }) {
 
   return (
     <button className="before-btn" onClick={handleNavigation}>
-      {children} {/*이름 그때그때 짓기*/}
+      {children}
     </button>
   );
 }
 
+export function BossButton({ children, to }) {
+  const navigate = useNavigate(); 
+  const handleClick = (event) => {
+    if (to) {
+      navigate(to);
+    } 
+  };
+
+  return (
+    <button className="boss-btn" onClick={handleClick}>
+      {children}
+    </button>
+  );
+}

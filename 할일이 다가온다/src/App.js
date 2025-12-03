@@ -19,6 +19,7 @@ import Loading from './components/pages/start/loading.js';
 
 import Raid from "./components/pages/ongoing/raid-page.js"
 import Success from "./components/pages/ongoing/success-page.js"
+import Boss from "./components/pages/ongoing/boss-page.js"
 
 function App() {
   //컴포넌트 정의
@@ -36,6 +37,7 @@ function App() {
 
         <Route path="/raid" element={<Raid />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/boss" element={<Boss />} />
       </Routes>
     </Router>
   );

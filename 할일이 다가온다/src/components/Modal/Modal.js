@@ -16,23 +16,29 @@ export function Modal({children, onClose}) {
 };
 
 
-export function ModalButton({children, to}) {
+export function ModalButton({children, to, onClose}) {
 
 const navigate = useNavigate();
-    const handleNavigation = (event) => {
+
+    const handleClick = (event) => {
     if (to) {
-        navigate(to);
+      navigate(to);
+    }
+    if (onClose) {
+      onClose();
     }
     };
 
   return (
-    <button className="modal-btn" onClick={handleNavigation}>
+    <button className="modal-btn" 
+    onClick={handleClick} >
       {children}
     </button>
   );
 };
 
-export function BigModal({children, onClose, to}) {
+
+export function BigModal({children, to}) {
     const navigate = useNavigate();
       const handleNavigation = (event) => {
         if (to) {
